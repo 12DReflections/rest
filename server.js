@@ -11,19 +11,13 @@ mongoose.connect('mongodb://localhost/rest_test');
 var app = express();
 
 //BodyParser setup for JSON
-//app.use(bodyParser.urlencoded({extended: true}));
-//app.use(bodyParser.json());
-
 app.use(bodyParser.urlencoded({'extended':'true'}));
 app.use(bodyParser.json());
 app.use(bodyParser.json({type:'application/vnd.api+json'}));
 app.use(methodOverride());
 
-
-
 //Route through folder
 app.use('/api', require('./routes/api'));
-
 
 /*
 //Basic route
